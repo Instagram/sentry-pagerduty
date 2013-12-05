@@ -1,11 +1,6 @@
 #!/usr/bin/env python
 from setuptools import setup, find_packages
 
-install_requires = [
-    'sentry>=5.3.3'
-    'pygerduty>=0.18'
-]
-
 f = open('README.rst')
 readme = f.read()
 f.close()
@@ -19,7 +14,7 @@ setup(
     description='A Sentry plugin for sending error occurrences to a PagerDuty instance.',
     long_description=readme,
     packages=find_packages(),
-    install_requires=install_requires,
+    install_requires=['sentry>=5.3.3','pygerduty>=0.18'],
     entry_points={
         'sentry.plugins': [
             'sentry_pagerduty = sentry_pagerduty.plugin:PagerDutyPlugin'
